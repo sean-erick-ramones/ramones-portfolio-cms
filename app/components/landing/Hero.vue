@@ -277,7 +277,7 @@ onBeforeUnmount(() => {
       </Motion>
     </template>
 
-    <!-- Mobile: 3 horizontal marquees stacked (Testimonials style) -->
+    <!-- 3 horizontal marquees stacked (Testimonials style) -->
     <div class="flex flex-col w-full min-w-0 gap-4">
       <UMarquee
         v-for="(col, colIndex) in imageColumns"
@@ -300,65 +300,5 @@ onBeforeUnmount(() => {
         </UTooltip>
       </UMarquee>
     </div>
-
-    <!-- Desktop md+: 3D tilted vertical columns -->
-    <!-- <div
-      class="hidden md:block relative w-full h-[500px] mt-8 -mx-8 sm:-mx-12 lg:-mx-16 overflow-hidden [perspective:500px]"
-    >
-      <div class="flex gap-4 h-[700px] origin-top [transform:rotateX(20deg)]">
-        <UMarquee
-          orientation="vertical"
-          :overlay="false"
-          class="flex-1 [--duration:30s] [--gap:--spacing(4)]"
-        >
-          <UTooltip
-            v-for="(img, index) in imageColumns[0]"
-            :key="`0-${index}`"
-            :text="img.alt"
-          >
-            <NuxtImg
-              loading="lazy"
-              class="w-full h-[200px] object-contain p-4 bg-white rounded-lg"
-              v-bind="img"
-            />
-          </UTooltip>
-        </UMarquee>
-        <UMarquee
-          reverse
-          orientation="vertical"
-          :overlay="false"
-          class="flex-1 [--duration:30s] [--gap:--spacing(4)]"
-        >
-          <UTooltip
-            v-for="(img, index) in imageColumns[1]"
-            :key="`1-${index}`"
-            :text="img.alt"
-          >
-            <NuxtImg
-              loading="lazy"
-              class="w-full h-[200px] object-contain p-4 bg-white rounded-lg"
-              v-bind="img"
-            />
-          </UTooltip>
-        </UMarquee>
-        <UMarquee
-          orientation="vertical"
-          :overlay="false"
-          class="flex-1 [--duration:30s] [--gap:--spacing(4)]"
-        >
-          <UTooltip
-            v-for="(img, index) in imageColumns[2]"
-            :key="`2-${index}`"
-            :text="img.alt"
-          >
-            <NuxtImg
-              loading="lazy"
-              class="w-full h-[200px] object-contain p-4 bg-white rounded-lg"
-              v-bind="img"
-            />
-          </UTooltip>
-        </UMarquee>
-      </div>
-    </div> -->
   </UPageHero>
 </template>

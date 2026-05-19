@@ -119,7 +119,7 @@ hero:
     - Agentic Workflow Developer
   links:
     - label: Download Resume
-      to: /documents/sean-ramones-resume-v2.pdf
+      to: /documents/sean-ramones-resume.pdf
       target: _blank
       color: neutral
       variant: outline
