@@ -69,7 +69,7 @@ faq:
       questions:
         - label: What kinds of projects do you focus on?
           content: |
-            I build full‑stack web applications, dashboards, and SaaS platforms with data‑rich, user‑friendly interfaces. On the frontend I primarily use Vue/Nuxt (and React when needed). On the backend I work with Node.js and FastAPI, with PostgreSQL/Supabase for data, and modern serverless/cloud platforms like Vercel and Cloudflare.
+            I build full‑stack web applications, dashboards, and SaaS platforms with data‑rich, user‑friendly interfaces. On the frontend I primarily use Vue/Nuxt and React/Next.js. On the backend I work with Node.js and FastAPI, with PostgreSQL/Supabase for data, headless CMS (Strapi, Nuxt Content), Docker for containerization, and modern serverless/cloud platforms like Vercel and Cloudflare.
         - label: How do you ensure scalability and code quality?
           content: |
             I favor type‑safe code (TypeScript), clear architecture and modular components, automated testing where it matters, and performance profiling. I document decisions, use code reviews, and set up CI to keep quality high as the product grows.
@@ -109,7 +109,7 @@ faq:
             Turning complex ideas into scalable, well‑designed products that feel effortless to use. I love shaping systems where design consistency, performance, and developer experience work together.
         - label: What tech do you prefer working with?
           content: |
-            Vue 3, Nuxt, Node.js, FastAPI, PostgreSQL/Supabase, and modern tooling (Vite, GitHub, CI/CD). Day-to-day I lean on **Claude Code**, **MCP servers**, the **Claude Agent SDK**, and the **Anthropic API** for agentic delivery. Pragmatic — I pick the right tool for the job.
+            Vue 3, Nuxt, React, Next.js, Node.js, FastAPI, PostgreSQL/Supabase, Docker, and headless CMS (Strapi, Nuxt Content). Modern tooling: Vite, GitHub, CI/CD. Day-to-day I lean on **Claude Code**, **MCP servers**, the **Claude Agent SDK**, and the **Anthropic API** for agentic delivery. Pragmatic — I pick the right tool for the job.
 hero:
   titlePrefix: "Hi! I'm Sean Erick. I am"
   roles:
