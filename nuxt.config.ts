@@ -53,7 +53,26 @@ export default defineNuxtConfig({
   content: {
     preview: {
       api: 'https://api.nuxt.studio'
+    },
+    // D1 required on Cloudflare runtime — better-sqlite3 is native and can't run on
+    // V8 isolates. 'DB' binding name must match wrangler.jsonc d1_databases[].binding.
+    database: {
+      type: 'd1',
+      bindingName: 'DB'
     }
+  },
+
+  image: {
+    // IPX/sharp (default provider) is native and fails on Cloudflare Workers runtime.
+    // Images served straight from /public via static assets — <NuxtImg> already uses
+    // fixed width/height so there is no runtime resize loss.
+    provider: 'none'
+  },
+
+  routeRules: {
+    // /_studio is SSR-only (GitHub OAuth + commit flow needs the server).
+    // Never prerender it, never edge-cache it.
+    '/_studio/**': { prerender: false, ssr: true }
   },
 
   compatibilityDate: '2024-11-01',

@@ -4,8 +4,10 @@
   "type": "module",
   "scripts": {
     "build": "NODE_OPTIONS='--max-old-space-size=4096' nuxt build",
+    "build:cf": "NITRO_PRESET=cloudflare_pages NODE_OPTIONS='--max-old-space-size=4096' nuxt build",
     "dev": "nuxt dev",
     "preview": "nuxt preview",
+    "preview:cf": "wrangler pages dev dist/",
     "postinstall": "nuxt prepare",
     "format": "oxfmt",
     "format:check": "oxfmt --check",
@@ -38,7 +40,8 @@
     "oxfmt": "0.52.0",
     "oxlint": "1.67.0",
     "typescript": "^5.9.3",
-    "vue-tsc": "^3.2.8"
+    "vue-tsc": "^3.2.8",
+    "wrangler": "^4.95.0"
   },
   "resolutions": {
     "unimport": "4.1.1"
