@@ -69,17 +69,11 @@ export default defineNuxtConfig({
     }
   },
 
-  eslint: {
-    config: {
-      stylistic: {
-        commaDangle: 'never',
-        braceStyle: '1tbs'
-      }
-    }
-  },
+  // Formatting is owned by oxfmt (.oxfmtrc.json); @nuxt/eslint stylistic stays off
+  // so ESLint and the formatter don't compete. ESLint keeps Vue/Nuxt + type-aware rules.
 
   studio: {
-    // Studio admin route (default: '/_studio')
+    // Studio admin route
     route: '/_studio',
 
     // GitHub repository configuration (owner and repo are required)

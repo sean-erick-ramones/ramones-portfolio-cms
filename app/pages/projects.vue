@@ -14,15 +14,19 @@ const { data } = await useAsyncData('projects', () => {
   return queryCollection('projects').all()
 })
 
-const projects = computed(() =>
-  data.value?.toSorted((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()) || []
+const projects = computed(
+  () =>
+    data.value?.toSorted((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime()) || []
 )
 
 const { global } = useAppConfig()
 
 const siteUrl = 'https://www.seancramones.com'
 const title = page.value?.seo?.title || page.value?.title || 'Projects - Sean Erick C. Ramones'
-const description = page.value?.seo?.description || page.value?.description || 'Explore projects and work by Sean Erick C. Ramones.'
+const description =
+  page.value?.seo?.description ||
+  page.value?.description ||
+  'Explore projects and work by Sean Erick C. Ramones.'
 const ogImage = `${siteUrl}/og-image.png`
 const pageUrl = `${siteUrl}/projects`
 
@@ -42,9 +46,7 @@ useSeoMeta({
 })
 
 useHead({
-  link: [
-    { rel: 'canonical', href: pageUrl }
-  ]
+  link: [{ rel: 'canonical', href: pageUrl }]
 })
 </script>
 
@@ -61,20 +63,14 @@ useHead({
       }"
     >
       <template #links>
-        <div
-          v-if="page.links"
-          class="flex items-center gap-2"
-        >
+        <div v-if="page.links" class="flex items-center gap-2">
           <UButton
             :label="page.links[0]?.label"
             :to="global.meetingLink"
             target="_blank"
             v-bind="page.links[0]"
           />
-          <UButton
-            :to="`mailto:${global.email}`"
-            v-bind="page.links[1]"
-          />
+          <UButton :to="`mailto:${global.email}`" v-bind="page.links[1]" />
         </div>
       </template>
     </UPageHero>
@@ -110,23 +106,21 @@ useHead({
           </template>
           <template #footer>
             <div class="flex flex-col gap-3">
-              <div
-                v-if="project.tags?.length"
-                class="flex flex-wrap gap-1.5"
-              >
+              <div v-if="project.tags?.length" class="flex flex-wrap gap-1.5">
                 <span
                   v-for="tag in project.tags"
                   :key="tag"
                   class="px-2 py-0.5 rounded-full text-xs"
-                  :class="tag === 'AI-Augmented' ? 'bg-primary/10 text-primary ring-1 ring-primary/30' : 'bg-elevated/60 text-muted'"
+                  :class="
+                    tag === 'AI-Augmented'
+                      ? 'bg-primary/10 text-primary ring-1 ring-primary/30'
+                      : 'bg-elevated/60 text-muted'
+                  "
                 >
                   {{ tag }}
                 </span>
               </div>
-              <ULink
-                :to="project.url"
-                class="text-sm text-primary flex items-center"
-              >
+              <ULink :to="project.url" class="text-sm text-primary flex items-center">
                 View Project
                 <UIcon
                   name="i-lucide-arrow-right"

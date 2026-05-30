@@ -1,40 +1,40 @@
 <script setup lang="ts">
-import type { IndexCollectionItem } from "@nuxt/content";
+import type { IndexCollectionItem } from '@nuxt/content'
 
-const { global } = useAppConfig();
+const { global } = useAppConfig()
 
 const props = defineProps<{
-  page: IndexCollectionItem;
-}>();
+  page: IndexCollectionItem
+}>()
 
-const snsLinks = computed(() => props.page.snsLinks ?? []);
+const snsLinks = computed(() => props.page.snsLinks ?? [])
 
 const imageColumns = computed(() => {
-  const imgs = props.page.hero.images ?? [];
-  return [0, 1, 2].map((c) => imgs.filter((_, i) => i % 3 === c));
-});
+  const imgs = props.page.hero.images ?? []
+  return [0, 1, 2].map((c) => imgs.filter((_, i) => i % 3 === c))
+})
 
 const longestRole = computed(() => {
-  const roles = props.page.hero.roles ?? [];
-  return [...roles].sort((a, b) => b.length - a.length)[0] ?? "";
-});
+  const roles = props.page.hero.roles ?? []
+  return [...roles].sort((a, b) => b.length - a.length)[0] ?? ''
+})
 
-const articleFor = (s: string) => (/^[aeiou]/i.test(s.trim()) ? "an" : "a");
+const articleFor = (s: string) => (/^[aeiou]/i.test(s.trim()) ? 'an' : 'a')
 
-const currentRoleIndex = ref((props.page.hero.roles?.length ?? 1) - 1);
+const currentRoleIndex = ref((props.page.hero.roles?.length ?? 1) - 1)
 
 const currentArticle = computed(() => {
-  const roles = props.page.hero.roles ?? [];
-  return articleFor(roles[currentRoleIndex.value] ?? "");
-});
+  const roles = props.page.hero.roles ?? []
+  return articleFor(roles[currentRoleIndex.value] ?? '')
+})
 
-const typedRoleEl = ref<HTMLElement | null>(null);
-let typeitInstance: { destroy: () => void } | null = null;
+const typedRoleEl = ref<HTMLElement | null>(null)
+let typeitInstance: { destroy: () => void } | null = null
 
 onMounted(async () => {
-  if (!typedRoleEl.value) return;
-  const TypeIt = (await import("typeit")).default;
-  typedRoleEl.value.textContent = "";
+  if (!typedRoleEl.value) return
+  const TypeIt = (await import('typeit')).default
+  typedRoleEl.value.textContent = ''
   typeitInstance = new TypeIt(typedRoleEl.value, {
     strings: props.page.hero.roles,
     speed: 80,
@@ -46,16 +46,16 @@ onMounted(async () => {
     cursor: true,
     waitUntilVisible: true,
     beforeString: () => {
-      const roles = props.page.hero.roles ?? [];
-      if (roles.length === 0) return;
-      currentRoleIndex.value = (currentRoleIndex.value + 1) % roles.length;
-    },
-  }).go();
-});
+      const roles = props.page.hero.roles ?? []
+      if (roles.length === 0) return
+      currentRoleIndex.value = (currentRoleIndex.value + 1) % roles.length
+    }
+  }).go()
+})
 
 onBeforeUnmount(() => {
-  typeitInstance?.destroy();
-});
+  typeitInstance?.destroy()
+})
 </script>
 
 <template>
@@ -63,7 +63,7 @@ onBeforeUnmount(() => {
     :ui="{
       headline: 'flex items-center justify-center',
       title: 'text-shadow-md max-w-lg mx-auto',
-      links: 'mt-4 flex-col justify-center items-center',
+      links: 'mt-4 flex-col justify-center items-center'
     }"
   >
     <template #headline>
@@ -71,16 +71,16 @@ onBeforeUnmount(() => {
         :initial="{
           scale: 1.1,
           opacity: 0,
-          filter: 'blur(20px)',
+          filter: 'blur(20px)'
         }"
         :animate="{
           scale: 1,
           opacity: 1,
-          filter: 'blur(0px)',
+          filter: 'blur(0px)'
         }"
         :transition="{
           duration: 0.6,
-          delay: 0.1,
+          delay: 0.1
         }"
       >
         <NuxtImg
@@ -99,26 +99,22 @@ onBeforeUnmount(() => {
         :initial="{
           scale: 1.1,
           opacity: 0,
-          filter: 'blur(20px)',
+          filter: 'blur(20px)'
         }"
         :animate="{
           scale: 1,
           opacity: 1,
-          filter: 'blur(0px)',
+          filter: 'blur(0px)'
         }"
         :transition="{
           duration: 0.6,
-          delay: 0.1,
+          delay: 0.1
         }"
       >
         <span>{{ page.hero.titlePrefix }} {{ currentArticle }} </span>
         <span class="relative inline-block align-baseline leading-[1.15]">
-          <span aria-hidden="true" class="invisible italic">{{
-            longestRole
-          }}</span>
-          <span ref="typedRoleEl" class="italic absolute inset-0">{{
-            page.hero.roles[0]
-          }}</span>
+          <span aria-hidden="true" class="invisible italic">{{ longestRole }}</span>
+          <span ref="typedRoleEl" class="italic absolute inset-0">{{ page.hero.roles[0] }}</span>
         </span>
       </Motion>
     </template>
@@ -128,16 +124,16 @@ onBeforeUnmount(() => {
         :initial="{
           scale: 1.1,
           opacity: 0,
-          filter: 'blur(20px)',
+          filter: 'blur(20px)'
         }"
         :animate="{
           scale: 1,
           opacity: 1,
-          filter: 'blur(0px)',
+          filter: 'blur(0px)'
         }"
         :transition="{
           duration: 0.6,
-          delay: 0.3,
+          delay: 0.3
         }"
       >
         {{ page.description }}
@@ -149,39 +145,26 @@ onBeforeUnmount(() => {
         :initial="{
           scale: 1.1,
           opacity: 0,
-          filter: 'blur(20px)',
+          filter: 'blur(20px)'
         }"
         :animate="{
           scale: 1,
           opacity: 1,
-          filter: 'blur(0px)',
+          filter: 'blur(0px)'
         }"
         :transition="{
           duration: 0.6,
-          delay: 0.5,
+          delay: 0.5
         }"
       >
-        <div
-          v-if="page.hero.links"
-          class="w-full flex flex-col sm:flex-row items-center gap-2"
-        >
-          <UButton
-            v-for="link in page.hero.links"
-            :key="link.label"
-            class="w-full sm:w-auto"
-          >
-            <a
-              :href="link.to"
-              target="_blank"
-              download
-              class="text-center w-full"
-              >{{ link.label }}</a
-            >
+        <div v-if="page.hero.links" class="w-full flex flex-col sm:flex-row items-center gap-2">
+          <UButton v-for="link in page.hero.links" :key="link.label" class="w-full sm:w-auto">
+            <a :href="link.to" target="_blank" download class="text-center w-full">{{
+              link.label
+            }}</a>
           </UButton>
           <UButton
-            :color="
-              (page.now?.available ?? global.available) ? 'primary' : 'error'
-            "
+            :color="(page.now?.available ?? global.available) ? 'primary' : 'error'"
             variant="ghost"
             class="gap-2"
             target="_blank"
@@ -208,11 +191,7 @@ onBeforeUnmount(() => {
                 />
                 <span
                   class="relative inline-flex scale-90 rounded-full size-2"
-                  :class="
-                    (page.now?.available ?? global.available)
-                      ? 'bg-primary'
-                      : 'bg-error'
-                  "
+                  :class="(page.now?.available ?? global.available) ? 'bg-primary' : 'bg-error'"
                 />
               </span>
             </template>
@@ -227,21 +206,19 @@ onBeforeUnmount(() => {
           :initial="{
             scale: 1.1,
             opacity: 0,
-            filter: 'blur(20px)',
+            filter: 'blur(20px)'
           }"
           :animate="{
             scale: 1,
             opacity: 1,
-            filter: 'blur(0px)',
+            filter: 'blur(0px)'
           }"
           :transition="{
             duration: 0.6,
-            delay: 0.5 + index * 0.1,
+            delay: 0.5 + index * 0.1
           }"
         >
-          <UButton
-            v-bind="{ size: 'md', color: 'neutral', variant: 'ghost', ...link }"
-          />
+          <UButton v-bind="{ size: 'md', color: 'neutral', variant: 'ghost', ...link }" />
         </Motion>
       </div>
 
@@ -251,16 +228,16 @@ onBeforeUnmount(() => {
         :initial="{
           scale: 1.1,
           opacity: 0,
-          filter: 'blur(20px)',
+          filter: 'blur(20px)'
         }"
         :animate="{
           scale: 1,
           opacity: 1,
-          filter: 'blur(0px)',
+          filter: 'blur(0px)'
         }"
         :transition="{
           duration: 0.6,
-          delay: 0.7,
+          delay: 0.7
         }"
       >
         <div class="mt-5 flex flex-col items-center gap-2">
@@ -287,11 +264,7 @@ onBeforeUnmount(() => {
         pause-on-hover
         class="[--duration:25s] [--gap:--spacing(3)]"
       >
-        <UTooltip
-          v-for="(img, index) in col"
-          :key="`m-${colIndex}-${index}`"
-          :text="img.alt"
-        >
+        <UTooltip v-for="(img, index) in col" :key="`m-${colIndex}-${index}`" :text="img.alt">
           <NuxtImg
             loading="lazy"
             class="h-22.5 w-22.5 object-contain p-3 bg-white rounded-lg"

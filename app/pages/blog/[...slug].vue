@@ -5,7 +5,8 @@ const { data: page } = await useAsyncData(route.path, () =>
   queryCollection('blog').path(route.path).first()
 )
 
-if (!page.value) throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
+if (!page.value)
+  throw createError({ statusCode: 404, statusMessage: 'Page not found', fatal: true })
 const { data: surround } = await useAsyncData(`${route.path}-surround`, () =>
   queryCollectionItemSurroundings('blog', route.path, {
     fields: ['description']
@@ -36,9 +37,7 @@ useSeoMeta({
 })
 
 useHead({
-  link: [
-    { rel: 'canonical', href: pageUrl }
-  ]
+  link: [{ rel: 'canonical', href: pageUrl }]
 })
 
 const articleLink = computed(() => {
@@ -61,10 +60,7 @@ const formatDate = (dateString: string) => {
   <UMain class="mt-20 px-2">
     <UContainer class="relative min-h-screen">
       <UPage v-if="page">
-        <ULink
-          to="/blog"
-          class="text-sm flex items-center gap-1"
-        >
+        <ULink to="/blog" class="text-sm flex items-center gap-1">
           <UIcon name="lucide:chevron-left" />
           Blog
         </ULink>
@@ -73,18 +69,14 @@ const formatDate = (dateString: string) => {
             <span v-if="page.date">
               {{ formatDate(page.date) }}
             </span>
-            <span v-if="page.date && page.minRead">
-              -
-            </span>
-            <span v-if="page.minRead">
-              {{ page.minRead }} MIN READ
-            </span>
+            <span v-if="page.date && page.minRead"> - </span>
+            <span v-if="page.minRead"> {{ page.minRead }} MIN READ </span>
           </div>
           <img
             :src="page.image"
             :alt="page.title"
             class="rounded-lg w-full h-[300px] object-cover object-center"
-          >
+          />
           <h1 class="text-4xl text-center font-medium max-w-3xl mx-auto mt-4">
             {{ page.title }}
           </h1>
@@ -102,10 +94,7 @@ const formatDate = (dateString: string) => {
           </div>
         </div>
         <UPageBody class="max-w-3xl mx-auto">
-          <ContentRenderer
-            v-if="page.body"
-            :value="page"
-          />
+          <ContentRenderer v-if="page.body" :value="page" />
 
           <div class="flex items-center justify-end gap-2 text-sm text-muted">
             <UButton

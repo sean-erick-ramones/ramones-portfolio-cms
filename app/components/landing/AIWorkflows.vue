@@ -1,9 +1,9 @@
 <script setup lang="ts">
-import type { IndexCollectionItem } from "@nuxt/content";
+import type { IndexCollectionItem } from '@nuxt/content'
 
 defineProps<{
-  page: IndexCollectionItem;
-}>();
+  page: IndexCollectionItem
+}>()
 </script>
 
 <template>
@@ -14,7 +14,7 @@ defineProps<{
     :ui="{
       container: 'px-0 !pt-0 sm:gap-6 lg:gap-8',
       title: 'text-left text-xl sm:text-xl lg:text-2xl font-medium',
-      description: 'text-left mt-2 text-sm sm:text-md lg:text-sm text-muted',
+      description: 'text-left mt-2 text-sm sm:text-md lg:text-sm text-muted'
     }"
   >
     <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
@@ -24,16 +24,16 @@ defineProps<{
         :initial="{
           scale: 1.05,
           opacity: 0,
-          filter: 'blur(12px)',
+          filter: 'blur(12px)'
         }"
         :animate="{
           scale: 1,
           opacity: 1,
-          filter: 'blur(0px)',
+          filter: 'blur(0px)'
         }"
         :transition="{
           duration: 0.5,
-          delay: 0.1 + index * 0.1,
+          delay: 0.1 + index * 0.1
         }"
       >
         <UPageCard
@@ -46,14 +46,11 @@ defineProps<{
             body: 'h-full flex flex-col gap-3',
             title: 'text-base font-medium',
             description: 'text-sm text-muted flex-1',
-            leadingIcon: 'size-5 text-primary',
+            leadingIcon: 'size-5 text-primary'
           }"
         >
           <template #footer>
-            <div
-              v-if="item.tools?.length"
-              class="flex flex-wrap gap-1.5"
-            >
+            <div v-if="item.tools?.length" class="flex flex-wrap gap-1.5">
               <UBadge
                 v-for="tool in item.tools"
                 :key="tool"

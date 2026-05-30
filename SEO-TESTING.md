@@ -27,6 +27,7 @@ All pages now have comprehensive SEO metadata including:
 **URL**: https://developers.facebook.com/tools/debug/
 
 **How to use**:
+
 1. Enter your URL: `https://www.seancramones.com`
 2. Click "Debug"
 3. Review the preview (title, description, image)
@@ -41,6 +42,7 @@ All pages now have comprehensive SEO metadata including:
 **URL**: https://cards-dev.twitter.com/validator
 
 **How to use**:
+
 1. Enter your URL
 2. Click "Preview card"
 3. See how it appears in Twitter/X feeds
@@ -54,6 +56,7 @@ All pages now have comprehensive SEO metadata including:
 **URL**: https://www.linkedin.com/post-inspector/
 
 **How to use**:
+
 1. Enter your URL
 2. Click "Inspect"
 3. Review the preview
@@ -66,6 +69,7 @@ All pages now have comprehensive SEO metadata including:
 **URL**: https://socialsharepreview.com/
 
 **How to use**:
+
 1. Enter your URL
 2. See previews for Facebook, Twitter, LinkedIn, Pinterest simultaneously
 
@@ -76,6 +80,7 @@ All pages now have comprehensive SEO metadata including:
 **URL**: https://www.opengraph.xyz/
 
 **How to use**:
+
 1. Enter your URL
 2. Instantly see Open Graph tags
 3. View preview for multiple platforms
@@ -87,6 +92,7 @@ All pages now have comprehensive SEO metadata including:
 **URL**: https://metatags.io/
 
 **How to use**:
+
 1. Enter your URL
 2. See live previews for Google, Facebook, Twitter, LinkedIn
 3. Edit and test different metadata
@@ -119,22 +125,29 @@ For each page, verify:
 ## Common Issues & Solutions
 
 ### Issue: Old preview showing after update
+
 **Solution**: Use "Scrape Again" in Facebook Debugger or wait 24 hours for cache to clear
 
 ### Issue: Image not displaying
-**Solution**: 
+
+**Solution**:
+
 - Ensure image URL is absolute (starts with `https://`)
 - Check image exists and is accessible
 - Verify image meets size requirements
 
 ### Issue: Wrong title/description
-**Solution**: 
+
+**Solution**:
+
 - Clear browser cache
 - Use incognito mode
 - Verify meta tags with "View Page Source"
 
 ### Issue: 404 error when sharing
-**Solution**: 
+
+**Solution**:
+
 - Ensure page is deployed and accessible
 - Check canonical URL matches actual URL
 - Verify SSL certificate is valid
@@ -144,11 +157,13 @@ For each page, verify:
 ## Quick Test Commands
 
 ### View meta tags in terminal:
+
 ```bash
 curl -s https://www.seancramones.com | grep -i "og:\|twitter:"
 ```
 
 ### Check specific page:
+
 ```bash
 curl -s https://www.seancramones.com/blog/your-post | grep -i "og:image"
 ```
@@ -158,12 +173,14 @@ curl -s https://www.seancramones.com/blog/your-post | grep -i "og:image"
 ## Create Default OG Image
 
 You need to create `/public/og-image.png` (1200x630px) with:
+
 - Your name/brand
 - Professional photo or logo
 - Clean background
 - Readable text
 
 ### Tools to create OG images:
+
 - [Canva](https://www.canva.com/) - Templates available
 - [Figma](https://www.figma.com/) - Design from scratch
 - [OG Image Playground](https://og-playground.vercel.app/) - Generate programmatically
@@ -184,21 +201,25 @@ You need to create `/public/og-image.png` (1200x630px) with:
 ## Platform-Specific Notes
 
 ### Facebook/LinkedIn
+
 - Caches aggressively (use debugger to refresh)
 - Prefers 1200x630px images
 - Reads `og:` tags first
 
 ### Twitter/X
+
 - Prefers `twitter:` tags over `og:` tags
 - Supports summary and summary_large_image cards
 - Good fallback to `og:` tags
 
 ### WhatsApp
+
 - Uses Facebook's cache
 - Limited customization
 - Falls back to `og:` tags
 
 ### Slack/Discord
+
 - Good Open Graph support
 - Shows rich previews automatically
 - Respects `og:type` for different layouts
@@ -229,6 +250,7 @@ You need to create `/public/og-image.png` (1200x630px) with:
 ## Support
 
 If previews still don't work after 24 hours:
+
 1. Check server is returning correct headers
 2. Verify robots.txt isn't blocking crawlers
 3. Ensure page is publicly accessible (not behind auth)

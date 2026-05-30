@@ -32,14 +32,11 @@ defineProps<{
         class="rounded-none"
         :ui="{
           container: 'sm:py-12 lg:py-12 sm:gap-8',
-          description: '!text-base text-balance whitespace-pre-line before:content-[open-quote] before:text-5xl lg:before:text-7xl before:inline-block before:text-dimmed before:absolute before:-ml-6 lg:before:-ml-10 before:-mt-2 lg:before:-mt-4 after:content-[close-quote] after:text-5xl lg:after:text-7xl after:inline-block after:text-dimmed after:absolute after:mt-1 lg:after:mt-0 after:ml-1 lg:after:ml-2'
+          description:
+            '!text-base text-balance whitespace-pre-line before:content-[open-quote] before:text-5xl lg:before:text-7xl before:inline-block before:text-dimmed before:absolute before:-ml-6 lg:before:-ml-10 before:-mt-2 lg:before:-mt-4 after:content-[close-quote] after:text-5xl lg:after:text-7xl after:inline-block after:text-dimmed after:absolute after:mt-1 lg:after:mt-0 after:ml-1 lg:after:ml-2'
         }"
       >
-        <UUser
-          v-bind="item.author"
-          size="xl"
-          class="justify-center"
-        />
+        <UUser v-bind="item.author" size="xl" class="justify-center" />
       </UPageCTA>
     </UCarousel>
   </UPageSection>

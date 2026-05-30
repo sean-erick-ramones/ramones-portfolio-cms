@@ -1,0 +1,13 @@
+# Cross-IDE enforcement: runs regardless of editor. IDE configs (.zed, .vscode) are
+# DX sugar on top of this. CI runs the full `format:check` + `lint` gate.
+pre-commit:
+  parallel: false
+  jobs:
+    - name: format
+      glob: '*.{js,mjs,cjs,ts,mts,cts,vue,json,jsonc,css,scss,md,yml,yaml}'
+      run: pnpm exec oxfmt {staged_files}
+      stage_fixed: true
+    - name: lint
+      glob: '*.{js,mjs,cjs,ts,mts,cts}'
+      run: pnpm exec oxlint --fix {staged_files}
+      stage_fixed: true
