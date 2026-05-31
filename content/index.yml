@@ -117,9 +117,9 @@ faq:
 hero:
   titlePrefix: "Hi! I'm Sean Erick. I am"
   roles:
-    - Full-Stack Engineer
+    - Full-Stack AI Engineer
     - AI Product Engineer
-    - AI Solutions Architect
+    - AI Integrations & Workflow Engineer
     - Agentic Workflow Developer
   links:
     - label: Download Resume
@@ -178,7 +178,7 @@ now:
     - Contract
     - Remote (UTC+8 overlap)
   available: true
-  meetingLink: https://cal.com/sean-erick-ramones-r5um2y/30min
+  meetingLink: https://cal.com/sean-erick-ramones-r5um2y/15min
 profileImage:
   src: /avatars/profile-image-1.png
   alt: Profile image of Sean Erick Ramones
