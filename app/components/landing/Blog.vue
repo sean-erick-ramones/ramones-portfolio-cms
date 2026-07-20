@@ -23,10 +23,7 @@ if (!posts.value) {
       description: 'text-left mt-2 text-sm sm:text-md lg:text-sm text-muted'
     }"
   >
-    <UBlogPosts
-      orientation="vertical"
-      class="gap-4 lg:gap-y-4"
-    >
+    <UBlogPosts orientation="vertical" class="gap-4 lg:gap-y-4">
       <UBlogPost
         v-for="(post, index) in posts"
         :key="index"
@@ -41,12 +38,7 @@ if (!posts.value) {
         }"
       >
         <template #footer>
-          <UButton
-            size="xs"
-            variant="link"
-            class="px-0 gap-0"
-            label="Read Article"
-          >
+          <UButton size="xs" variant="link" class="px-0 gap-0" label="Read Article">
             <template #trailing>
               <UIcon
                 name="i-lucide-arrow-right"

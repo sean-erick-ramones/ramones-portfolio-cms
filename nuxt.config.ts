@@ -53,7 +53,26 @@ export default defineNuxtConfig({
   content: {
     preview: {
       api: 'https://api.nuxt.studio'
+    },
+    // D1 required on Cloudflare runtime — better-sqlite3 is native and can't run on
+    // V8 isolates. 'DB' binding name must match wrangler.jsonc d1_databases[].binding.
+    database: {
+      type: 'd1',
+      bindingName: 'DB'
     }
+  },
+
+  image: {
+    // IPX/sharp (default provider) is native and fails on Cloudflare Workers runtime.
+    // Images served straight from /public via static assets — <NuxtImg> already uses
+    // fixed width/height so there is no runtime resize loss.
+    provider: 'none'
+  },
+
+  routeRules: {
+    // /_studio is SSR-only (GitHub OAuth + commit flow needs the server).
+    // Never prerender it, never edge-cache it.
+    '/_studio/**': { prerender: false, ssr: true }
   },
 
   compatibilityDate: '2024-11-01',
@@ -69,17 +88,11 @@ export default defineNuxtConfig({
     }
   },
 
-  eslint: {
-    config: {
-      stylistic: {
-        commaDangle: 'never',
-        braceStyle: '1tbs'
-      }
-    }
-  },
+  // Formatting is owned by oxfmt (.oxfmtrc.json); @nuxt/eslint stylistic stays off
+  // so ESLint and the formatter don't compete. ESLint keeps Vue/Nuxt + type-aware rules.
 
   studio: {
-    // Studio admin route (default: '/_studio')
+    // Studio admin route
     route: '/_studio',
 
     // GitHub repository configuration (owner and repo are required)

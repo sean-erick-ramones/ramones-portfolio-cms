@@ -35,7 +35,7 @@ Key files and folders:
 - `nuxt.config.ts` — Modules and Nitro prerender config
 - `app/components/landing/` — Homepage sections (Hero, About, Blog, etc.)
 - `app/pages/` — Route pages (index, about, projects, blog)
-- `content/` — Content source (index.yml, about.yml, projects.yml, blog/*.md)
+- `content/` — Content source (index.yml, about.yml, projects.yml, blog/\*.md)
 - `public/` — Static assets (images, docs, etc.)
 - `.github/workflows/` — CI (lint/typecheck/build)
 - `scripts/` — Authoring helpers (front matter updater, templates, docs)
@@ -67,6 +67,7 @@ pnpm preview
 ```
 
 Notes:
+
 - The build script uses `NODE_OPTIONS=--max-old-space-size=4096` to avoid Node heap OOM on CI and local builds.
 - Nitro prerender is configured to be explicit and resilient (`crawlLinks: false`, `failOnError: false`).
 - If you encounter `GLib-GObject-CRITICAL` errors on Linux, see the Troubleshooting section below.
@@ -90,6 +91,7 @@ vercel
 **Option 2: Automatic deployment via GitHub integration**
 
 Connect your GitHub repository to Vercel for automatic deployments:
+
 - Push to `main` → deploys to production
 - Push to other branches → creates preview deployments
 
@@ -131,6 +133,7 @@ That makes a root `.env` optional after cloning. A root `.env.local` still works
 This repo is designed for a simple copy/paste workflow from Notion or any editor into Markdown. A helper script normalizes front matter and keeps metadata consistent.
 
 Content locations:
+
 - Homepage: `content/index.yml`
 - Pages: `content/{about,projects,blog}.yml`
 - Projects: `content/projects/*.yml`
@@ -139,6 +142,7 @@ Content locations:
 ### Front matter updater (scripts/update-blog-frontmatter.mjs)
 
 What it does:
+
 - Extracts title from first `#` heading
 - Generates description from the first paragraph
 - Calculates `minRead` from word count (200 wpm)
@@ -217,6 +221,7 @@ Workflows in `.github/workflows/`:
 5. Vercel dashboard shows deployment status and logs
 
 The project uses Vercel's automatic deployment system, which manages:
+
 - Automatic builds on git push
 - Preview deployments for pull requests
 - Edge functions and serverless routes

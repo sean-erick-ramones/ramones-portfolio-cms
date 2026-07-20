@@ -53,7 +53,8 @@ const AUTHOR = {
   }
 }
 
-const DEFAULT_IMAGE = 'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
+const DEFAULT_IMAGE =
+  'https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1'
 
 // (Reserved for future: keyword-based image refinement)
 
@@ -119,7 +120,11 @@ async function getRandomTechImage(title = '') {
     let searchQuery = 'programming code technology'
 
     // Match specific keywords from title
-    if (titleKeywords.includes('vue') || titleKeywords.includes('react') || titleKeywords.includes('javascript')) {
+    if (
+      titleKeywords.includes('vue') ||
+      titleKeywords.includes('react') ||
+      titleKeywords.includes('javascript')
+    ) {
       searchQuery = 'web development coding'
     } else if (titleKeywords.includes('design') && titleKeywords.includes('system')) {
       searchQuery = 'system architecture diagram'
@@ -194,7 +199,7 @@ function generateDescription(content) {
     .trim()
 
   // Get first meaningful paragraph
-  const paragraphs = cleanContent.split('\n\n').filter(p => p.length > 50)
+  const paragraphs = cleanContent.split('\n\n').filter((p) => p.length > 50)
   if (paragraphs.length > 0) {
     const desc = paragraphs[0].replace(/\n/g, ' ').substring(0, 200)
     const formattedDescription = desc.length === 200 ? desc + '...' : desc
@@ -211,7 +216,7 @@ function estimateReadTime(content) {
   const words = content
     .replace(/^---[\s\S]*?---\n/m, '')
     .split(/\s+/)
-    .filter(w => w.length > 0).length
+    .filter((w) => w.length > 0).length
   return Math.max(1, Math.ceil(words / 200))
 }
 
@@ -328,7 +333,7 @@ async function main() {
 
   // Check for --refresh-images flag
   const refreshImages = args.includes('--refresh-images')
-  const fileArgs = args.filter(arg => !arg.startsWith('--'))
+  const fileArgs = args.filter((arg) => !arg.startsWith('--'))
 
   if (fileArgs.length > 0) {
     // Process specific file
@@ -341,9 +346,10 @@ async function main() {
     }
   } else {
     // Process all files in blog directory
-    const files = fs.readdirSync(BLOG_DIR)
-      .filter(f => f.endsWith('.md'))
-      .map(f => path.join(BLOG_DIR, f))
+    const files = fs
+      .readdirSync(BLOG_DIR)
+      .filter((f) => f.endsWith('.md'))
+      .map((f) => path.join(BLOG_DIR, f))
 
     console.log(`🔄 Processing ${files.length} blog posts...`)
 

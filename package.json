@@ -4,11 +4,15 @@
   "type": "module",
   "scripts": {
     "build": "NODE_OPTIONS='--max-old-space-size=4096' nuxt build",
+    "build:cf": "NITRO_PRESET=cloudflare_pages NODE_OPTIONS='--max-old-space-size=4096' nuxt build",
     "dev": "nuxt dev",
     "preview": "nuxt preview",
+    "preview:cf": "wrangler pages dev dist/",
     "postinstall": "nuxt prepare",
-    "lint": "eslint .",
-    "lint:fix": "eslint . --fix",
+    "format": "oxfmt",
+    "format:check": "oxfmt --check",
+    "lint": "oxlint && eslint .",
+    "lint:fix": "oxlint --fix && eslint . --fix",
     "typecheck": "nuxt typecheck",
     "blog:update": "node scripts/update-blog-frontmatter.mjs",
     "blog:update-file": "node scripts/update-blog-frontmatter.mjs"
@@ -27,24 +31,21 @@
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.15.2",
+    "@types/node": "^25.9.1",
     "better-sqlite3": "^12.9.0",
     "dotenv": "^17.4.2",
     "eslint": "^9.39.4",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-oxlint": "1.67.0",
+    "lefthook": "2.1.9",
+    "oxfmt": "0.52.0",
+    "oxlint": "1.67.0",
     "typescript": "^5.9.3",
-    "vue-tsc": "^3.2.8"
+    "vue-tsc": "^3.2.8",
+    "wrangler": "^4.95.0"
   },
   "resolutions": {
     "unimport": "4.1.1"
   },
-  "packageManager": "pnpm@11.0.9",
-  "pnpm": {
-    "onlyBuiltDependencies": [
-      "better-sqlite3",
-      "esbuild",
-      "sharp",
-      "typeit",
-      "unrs-resolver",
-      "vue-demi"
-    ]
-  }
+  "packageManager": "pnpm@11.5.0+sha512.dbfcc4f81cf48597afd4bc391ffdf12c11f1a9fb83a395bfa6b0a2d9cc2fd8ffebafdb1ccbd529632153f793904c2615b7f09fe1a345473fd1c35845172a8eb1"
 }

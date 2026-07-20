@@ -1,0 +1,11 @@
+{
+  // Formatting is delegated to the oxfmt binary so it behaves identically across IDEs.
+  // For inline lint diagnostics, install the "oxc" Zed extension (Zed: Extensions).
+  "format_on_save": "on",
+  "formatter": {
+    "external": {
+      "command": "pnpm",
+      "arguments": ["exec", "oxfmt", "--stdin-filepath", "{buffer_path}"]
+    }
+  }
+}

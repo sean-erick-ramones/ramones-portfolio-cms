@@ -30,3 +30,6 @@ logs
 
 # Claude Code local settings
 .claude/settings.local.json
+
+# Wrangler local state (D1 sqlite, cache, logs)
+.wrangler/

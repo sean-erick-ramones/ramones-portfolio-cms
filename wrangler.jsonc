@@ -1,0 +1,21 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  // Cloudflare Pages SSR deployment config.
+  // Build command: pnpm build   Build output dir: dist
+  // Set env var NITRO_PRESET=cloudflare_pages in the Pages project settings
+  // (Production + Preview) so Nitro emits a server bundle instead of static output.
+  "name": "portfolio-cms",
+  "pages_build_output_dir": "dist",
+  "compatibility_date": "2024-11-01",
+  // nodejs_compat required for nuxt-studio server routes + @nuxt/content D1 adapter.
+  // Minimum compatibility_date for nodejs_compat: 2024-09-23 (2024-11-01 satisfies this).
+  "compatibility_flags": ["nodejs_compat"],
+  "d1_databases": [
+    {
+      // 'DB' must match content.database.bindingName in nuxt.config.ts.
+      "binding": "DB",
+      "database_name": "portfolio-cms-content",
+      "database_id": "b0188635-8502-4ff1-883d-ebe30ca8c983"
+    }
+  ]
+}

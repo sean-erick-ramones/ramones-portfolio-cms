@@ -13,7 +13,10 @@ if (!page.value) {
 
 const siteUrl = 'https://www.seancramones.com'
 const title = page.value?.seo?.title || page.value?.title || 'About - Sean Erick C. Ramones'
-const description = page.value?.seo?.description || page.value?.description || 'Learn more about Sean Erick C. Ramones, a full-stack engineer specializing in Vue.js and modern web technologies.'
+const description =
+  page.value?.seo?.description ||
+  page.value?.description ||
+  'Learn more about Sean Erick C. Ramones, a full-stack engineer specializing in Vue.js and modern web technologies.'
 const ogImage = page.value?.profileImage?.src
   ? `${siteUrl}${page.value.profileImage.src}`
   : `${siteUrl}/og-image.png`
@@ -35,9 +38,7 @@ useSeoMeta({
 })
 
 useHead({
-  link: [
-    { rel: 'canonical', href: pageUrl }
-  ]
+  link: [{ rel: 'canonical', href: pageUrl }]
 })
 </script>
 
@@ -60,20 +61,15 @@ useHead({
         :alt="page.profileImage.alt"
         width="144"
         height="144"
-      >
+      />
     </UPageHero>
     <UPageSection
       :ui="{
         container: '!pt-0'
       }"
     >
-      <div
-        v-if="page.now?.openTo?.length"
-        class="mb-6"
-      >
-        <h3 class="text-sm font-medium text-muted">
-          Now / Open to
-        </h3>
+      <div v-if="page.now?.openTo?.length" class="mb-6">
+        <h3 class="text-sm font-medium text-muted">Now / Open to</h3>
         <div class="mt-2 flex flex-wrap gap-2">
           <span
             v-for="item in page.now.openTo"
@@ -84,10 +80,7 @@ useHead({
           </span>
         </div>
       </div>
-      <MDC
-        :value="page.content"
-        unwrap="p"
-      />
+      <MDC :value="page.content" unwrap="p" />
 
       <!-- Mobile/Tablet: Carousel (below md breakpoint) -->
       <UCarousel
@@ -100,21 +93,13 @@ useHead({
         class="md:hidden py-10"
       >
         <div class="flex justify-center py-2">
-          <PolaroidItem
-            :image="item"
-            :index="0"
-          />
+          <PolaroidItem :image="item" :index="0" />
         </div>
       </UCarousel>
 
       <!-- Desktop: Overlapping polaroid layout (md and above) -->
       <div class="hidden md:flex flex-row justify-center items-center py-10 -space-x-8">
-        <PolaroidItem
-          v-for="(image, index) in page.images"
-          :key="index"
-          :image="image"
-          :index
-        />
+        <PolaroidItem v-for="(image, index) in page.images" :key="index" :image="image" :index />
       </div>
     </UPageSection>
   </UPage>

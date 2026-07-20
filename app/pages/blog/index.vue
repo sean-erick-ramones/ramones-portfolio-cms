@@ -23,7 +23,10 @@ if (!posts.value) {
 
 const siteUrl = 'https://www.seancramones.com'
 const title = page.value?.seo?.title || page.value?.title || 'Blog - Sean Erick C. Ramones'
-const description = page.value?.seo?.description || page.value?.description || 'Articles and insights on web development, Vue.js, Nuxt, and software engineering.'
+const description =
+  page.value?.seo?.description ||
+  page.value?.description ||
+  'Articles and insights on web development, Vue.js, Nuxt, and software engineering.'
 const ogImage = `${siteUrl}/og-image.png`
 const pageUrl = `${siteUrl}/blog`
 
@@ -43,9 +46,7 @@ useSeoMeta({
 })
 
 useHead({
-  link: [
-    { rel: 'canonical', href: pageUrl }
-  ]
+  link: [{ rel: 'canonical', href: pageUrl }]
 })
 </script>
 
@@ -85,9 +86,7 @@ useHead({
               image:
                 'group-hover/blog-post:scale-105 rounded-lg shadow-lg border-4 border-muted ring-2 ring-default',
               header:
-                index % 2 === 0
-                  ? 'sm:-rotate-1 overflow-visible'
-                  : 'sm:rotate-1 overflow-visible'
+                index % 2 === 0 ? 'sm:-rotate-1 overflow-visible' : 'sm:rotate-1 overflow-visible'
             }"
           />
         </Motion>

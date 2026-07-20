@@ -9,11 +9,13 @@
    - Save the `.md` file
 
 2. **Copy to blog directory**
+
    ```bash
    cp ~/Downloads/your-notion-export.md content/blog/my-post-slug.md
    ```
 
 3. **Auto-update front matter**
+
    ```bash
    # Update all blog posts
    pnpm blog:update
@@ -26,6 +28,7 @@
    ```
 
 The script will automatically:
+
 - ✅ Extract title from your first H1 heading
 - ✅ Generate description from first paragraph
 - ✅ Calculate reading time from word count
@@ -37,6 +40,7 @@ The script will automatically:
 ### Method 2: Using the Template
 
 1. **Copy the template**
+
    ```bash
    cp scripts/blog-template.md content/blog/my-new-post.md
    ```
@@ -54,24 +58,24 @@ The script will automatically:
 
 ### What Gets Auto-Generated
 
-| Field | How It's Generated |
-|-------|-------------------|
-| `title` | First H1 heading in content |
-| `description` | First meaningful paragraph (max 200 chars) |
-| `date` | Extracted from content patterns like `[October 2024]` or current date |
-| `minRead` | Word count ÷ 200 (avg reading speed) |
-| `author` | Always uses your configured author info |
-| `image` | Keeps existing image or uses default |
+| Field         | How It's Generated                                                    |
+| ------------- | --------------------------------------------------------------------- |
+| `title`       | First H1 heading in content                                           |
+| `description` | First meaningful paragraph (max 200 chars)                            |
+| `date`        | Extracted from content patterns like `[October 2024]` or current date |
+| `minRead`     | Word count ÷ 200 (avg reading speed)                                  |
+| `author`      | Always uses your configured author info                               |
+| `image`       | Keeps existing image or uses default                                  |
 
 ### Front Matter Schema
 
 ```yaml
 ---
-title: "Required: Post title"
+title: 'Required: Post title'
 description: Brief description for SEO and previews
-date: 2025-01-01  # YYYY-MM-DD format
-image: https://...  # Featured image URL
-minRead: 5  # Estimated reading time in minutes
+date: 2025-01-01 # YYYY-MM-DD format
+image: https://... # Featured image URL
+minRead: 5 # Estimated reading time in minutes
 author:
   name: Sean Erick C. Ramones
   avatar:
@@ -90,12 +94,15 @@ author:
 ## Common Issues
 
 **Problem:** Script generates wrong title
+
 - **Solution:** Make sure your first heading is an H1 (`#`) not H2 (`##`)
 
 **Problem:** Description is too short
+
 - **Solution:** Write a longer introduction paragraph (at least 50 characters)
 
 **Problem:** Date is wrong
+
 - **Solution:** Manually set the date in front matter, or include it in content like `[Month Year]`
 
 ## Configuration
@@ -103,6 +110,7 @@ author:
 ### Author Info
 
 To change default author info, edit:
+
 ```javascript
 // scripts/update-blog-frontmatter.mjs
 const AUTHOR = {
@@ -124,6 +132,7 @@ To automatically fetch tech-related images:
    - Copy your API key (no rate limits!)
 
 2. **Set environment variable:**
+
    ```bash
    # Add to your ~/.bashrc or ~/.zshrc
    export NUXT_PEXELS_API_KEY="your_api_key_here"
@@ -133,6 +142,7 @@ To automatically fetch tech-related images:
    ```
 
 3. **Run the script with image fetching:**
+
    ```bash
    # New posts will automatically get random tech images
    pnpm blog:update
@@ -144,6 +154,7 @@ To automatically fetch tech-related images:
 **Note:** Without an API key, the script will use a default fallback image.
 
 **Benefits of Pexels API:**
+
 - ✅ Completely free with no rate limits
 - ✅ High-quality curated images
 - ✅ No attribution required
