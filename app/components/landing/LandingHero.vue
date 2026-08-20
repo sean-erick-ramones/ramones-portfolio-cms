@@ -52,12 +52,14 @@ onUnmounted(() => clearInterval(timer))
       </h1>
 
       <div
-        class="mt-4 flex flex-wrap items-center gap-x-1 text-[clamp(12px,3.4vw,18px)]"
+        class="mt-4 flex flex-col items-start gap-x-1 sm:flex-row sm:items-center text-[clamp(13px,3.2vw,18px)]"
         style="font-family: var(--font-mono)"
       >
-        <span class="text-stone-400 dark:text-stone-500">$</span>
-        <span class="text-stone-900 dark:text-stone-100">whoami</span>
-        <span class="sr-role ml-1.5 max-w-full text-matcha-700 dark:text-matcha-400">
+        <span class="flex items-center gap-1">
+          <span class="text-stone-400 dark:text-stone-500">$</span>
+          <span class="text-stone-900 dark:text-stone-100">whoami</span>
+        </span>
+        <span class="sr-role max-w-full sm:ml-1.5 text-matcha-700 dark:text-matcha-400">
           <span
             class="sr-roll-col"
             :class="{ 'sr-roll-animate': animate }"
@@ -79,7 +81,7 @@ onUnmounted(() => clearInterval(timer))
         {{ description }}
       </p>
 
-      <div class="mt-8 flex flex-wrap gap-3">
+      <div class="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center">
         <UButton
           to="/documents/sean-ramones-resume.pdf"
           target="_blank"
