@@ -4,10 +4,10 @@
 @source "../../../content/**/*";
 
 @theme static {
-  --font-sans: 'Public Sans', sans-serif;
+  --font-sans: 'Geist', sans-serif;
+  --font-mono: 'Geist Mono', monospace;
   --font-serif: 'Instrument Serif', serif;
 
-  /* Custom color theme */
   --color-matcha-50: #f6faec;
   --color-matcha-100: #eaf3cf;
   --color-matcha-200: #d4e69e;
@@ -25,8 +25,8 @@
   --ui-container: var(--container-4xl);
 
   ::selection {
-    color: #282a30;
-    background-color: #c8c8c8;
+    color: #04231a;
+    background-color: #c7f9e3;
   }
 }
 

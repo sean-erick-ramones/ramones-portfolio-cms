@@ -1,8 +1,20 @@
 <script setup lang="ts">
 const props = defineProps<{
+  person: { name: string; title: string }
+  headline: string
+  headlineAccent: string
   roles: string[]
   description: string
   meetingLink: string
+  resumeLink: {
+    label: string
+    to?: string
+    target?: string
+    download?: string
+    color?: string
+    variant?: string
+    icon?: string
+  }
 }>()
 
 // Duplicate the first role at the end so the column can roll back to the
@@ -39,22 +51,22 @@ onUnmounted(() => clearInterval(timer))
           class="text-xs uppercase tracking-[.14em] text-matcha-700 dark:text-matcha-400"
           style="font-family: var(--font-mono)"
         >
-          Sean Erick C. Ramones
+          {{ person.name }}
         </span>
         <span class="block shrink-0 w-[22px] h-px bg-matcha-600 dark:bg-matcha-400" />
         <span
           class="text-xs uppercase tracking-[.14em] text-matcha-700 dark:text-matcha-400"
           style="font-family: var(--font-mono)"
         >
-          AI Engineer | Full-Stack Development
+          {{ person.title }}
         </span>
       </div>
 
       <h1
         class="text-[clamp(38px,6vw,74px)] font-semibold leading-[1.02] tracking-[-0.035em] max-w-[15ch] text-stone-900 dark:text-stone-100"
       >
-        I build full-stack products,
-        <span class="text-matcha-700 dark:text-matcha-400">augmented by agentic AI.</span>
+        {{ headline }}
+        <span class="text-matcha-700 dark:text-matcha-400">{{ headlineAccent }}</span>
       </h1>
 
       <div
@@ -89,15 +101,18 @@ onUnmounted(() => clearInterval(timer))
 
       <div class="mt-8 flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:items-center">
         <UButton
-          to="/documents/sean-ramones-resume.pdf"
-          target="_blank"
+          :to="resumeLink.to"
+          :target="resumeLink.target"
+          :download="resumeLink.download"
           size="sm"
           class="rounded-lg font-semibold !text-stone-900 dark:!text-stone-950 hover:brightness-[.94]"
           style="font-family: var(--font-mono); font-size: 13px"
           color="neutral"
-          :ui="{ base: 'bg-matcha-500 dark:bg-matcha-400 hover:bg-matcha-600 dark:hover:bg-matcha-500' }"
+          :ui="{
+            base: 'bg-matcha-500 dark:bg-matcha-400 hover:bg-matcha-600 dark:hover:bg-matcha-500'
+          }"
         >
-          Download Resume
+          {{ resumeLink.label }}
         </UButton>
         <UButton
           :to="meetingLink"
@@ -117,8 +132,13 @@ onUnmounted(() => clearInterval(timer))
 
 <style>
 @keyframes sr-blink {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0; }
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
 }
 
 .sr-caret {

@@ -53,22 +53,23 @@ export default defineContentConfig({
           .optional(),
         title: z.string().nonempty(),
         description: z.string().nonempty(),
-        profileImage: createImageSchema(),
         snsLinks: z.array(createButtonSchema()),
+        person: z.object({
+          name: z.string().nonempty(),
+          title: z.string().nonempty()
+        }),
         hero: z.object({
-          links: z.array(createButtonSchema()),
-          images: z.array(createImageSchema()),
+          resumeLink: createButtonSchema(),
           titlePrefix: z.string().nonempty(),
+          headline: z.string().nonempty(),
+          headlineAccent: z.string().nonempty(),
           roles: z.array(z.string().nonempty()).min(1)
         }),
-        about: createBaseSchema(),
         now: z
           .object({
             openTo: z.array(z.string()).optional(),
-            // Availability controls for hero CTA moved to content
             available: z.boolean().optional(),
             meetingLink: z.string().optional(),
-            // Legacy/optional fields (not rendered):
             currently: z.array(z.string()).optional(),
             availability: z.string().optional()
           })
@@ -89,12 +90,22 @@ export default defineContentConfig({
             })
           )
         }),
+        skills: z.object({
+          categories: z.array(
+            z.object({
+              name: z.string(),
+              skills: z.array(z.string())
+            })
+          )
+        }),
         testimonials: createBaseSchema().extend({
           items: z.array(createTestimonialSchema())
         }),
         blog: createBaseSchema(),
         aiWorkflows: createBaseSchema()
           .extend({
+            heading: z.string().nonempty(),
+            headingAccent: z.string().nonempty(),
             items: z.array(
               z.object({
                 title: z.string(),
@@ -106,18 +117,25 @@ export default defineContentConfig({
             )
           })
           .optional(),
-        faq: createBaseSchema().extend({
-          categories: z.array(
+        about: z.object({
+          heading: z.string().nonempty(),
+          checklist: z.array(z.string()),
+          quickFacts: z.array(
             z.object({
-              title: z.string().nonempty(),
-              questions: z.array(
-                z.object({
-                  label: z.string().nonempty(),
-                  content: z.string().nonempty()
-                })
-              )
+              label: z.string(),
+              value: z.string()
             })
           )
+        }),
+        beyond: z.object({
+          items: z.array(z.string())
+        }),
+        projects: z.object({
+          heading: z.string().nonempty()
+        }),
+        contact: z.object({
+          heading: z.string().nonempty(),
+          ctaLabel: z.string().nonempty()
         })
       })
     }),
@@ -145,7 +163,7 @@ export default defineContentConfig({
     }),
     pages: defineCollection({
       type: 'page',
-      source: [{ include: 'projects.yml' }, { include: 'blog.yml' }],
+      source: [{ include: 'blog.yml' }],
       schema: z.object({
         links: z.array(createButtonSchema())
       })
@@ -157,7 +175,6 @@ export default defineContentConfig({
       schema: z.object({
         profileImage: createImageSchema(),
         content: z.object({}),
-        images: z.array(createImageSchema()),
         now: z
           .object({
             openTo: z.array(z.string()).optional(),
