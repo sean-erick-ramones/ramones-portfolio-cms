@@ -4,65 +4,19 @@ profileImage:
   src: /avatars/profile-image-2.png
   alt: Sean Erick C. Ramones
 content: |
-  Hi, I'm **Sean Erick Ramones**, an AI-augmented full‑stack software engineer with over 7 years of experience building modern, performant web applications.
+  Hi, I'm **Sean Erick Ramones**, an AI-augmented full-stack software engineer with over 7 years of experience building modern, performant web applications.
 
-  I focus on turning complex ideas into elegant, scalable products — pairing deep frontend craft (**Vue 3**, **Nuxt**, **React**, **Next.js**), backend systems work (**Node.js**, **FastAPI**), headless CMS (**Strapi**, **Nuxt Content**), containerization (**Docker**), data (**PostgreSQL/Supabase**), and serverless deploys (**Vercel**, **Cloudflare**) with agentic AI tooling: **Claude Code**, **MCP**, the **Claude Agent SDK**, and the **Anthropic API**. Most of my hands-on manual work now flows through AI hand-offs while I drive architecture, judgment, and review.
+  Based in Dumaguete, Philippines, I've spent 7+ years building HR-tech SaaS, ML-integrated platforms, and data-rich dashboards for international teams. My craft spans **Vue 3**, **Nuxt**, **React & Next.js** on the frontend and **Node.js**, **Hono & FastAPI** on the backend, with **PostgreSQL/Supabase** for data and serverless deploys on **Vercel** and **Cloudflare**.
 
-  ### What I care about
-
-  - Type‑safe code and clean architecture
-  - Reusable components and design systems
-  - Performance, accessibility, and DX
-  - CI/CD and code review culture that scales
-
-  ### Selected experience
-
-  - Miller Development AB — Full‑stack Software Engineer (Hybrid, May 2019–Present)
-  - BetterTradeOff Ltd. — Frontend Developer (Contract, Apr 2023–Jan 2024)
-  - SCI Global Services — Full‑stack Software Developer (Remote, Jun 2018–Apr 2019)
-
-  ### Education
-
-  - **Silliman University** — Bachelor of Science in Information Technology (2014–2018), Dumaguete City
-    - Thesis: digital restaurant ordering system to improve order accuracy and speed for local food businesses.
-
-  ### Languages
-
-  - **English** — Fluent
-  - **Filipino / Cebuano** — Native
-
-  ### Beyond the code
-
-  - **Brewing coffee** — espresso and pour-over (with my terrible latte art)
-  - **Pickleball** — current trending sport got me hooked
-  - **Running** — sometimes jogging, sometimes walking
-  - **Free diving** — mostly coastal areas near me
-  - **Road-trips and traveling** — sea/coastal or the mountains
-  - Cross‑fit training
-  - Watching anime; reading Japanese manga/light novels
-  - Playing MOBA games (**Dota 2**) and relaxing games (**Stardew Valley**)
-
-  If you’d like to collaborate, reach me at **seancramones@gmail.com** or connect on [LinkedIn](https://www.linkedin.com/in/sean-erick-ramones-102a64192).
-images:
-  - src: /about/awareness-run-2024-dumagete.jpg
-    alt: Awareness Run 2024 in Dumaguete
-  - src: /about/job-agent-team-reunion-the-pub-dumaguete.jpg
-    alt: Team reunion at The Pub in Dumaguete
-  - src: /about/pad-thai-from-wok-bae-dumaguete.jpg
-    alt: Pad Thai at Wok Bae in Dumaguete
-  - src: /about/sipalay-beach-negros-occidental.jpg
-    alt: Sipalay beach in Negros Occidental
-  - src: /about/casaroro-falls-valencia-negros-oriental.jpg
-    alt: Casaroro Falls in Negros Oriental
-  - src: /about/sipalay-coast-negros-occidental.jpg
-    alt: Sipalay coast in Negros Occidental
-
+  These days a lot of my hands-on work runs through AI hand-offs like **Claude Code**, **MCP**, and the **Claude Agent SDK**, while I stay focused on architecture, judgment, and review. I try to keep it pragmatic and reach for whatever tool actually fits the job.
 now:
   openTo:
     - Full-time
     - Contract
     - Remote (UTC+8 overlap)
   currently:
-    - Building data-rich dashboards with Nuxt
-    - Learning advanced serverless patterns
+    - Building data-rich dashboards and unifying data from CRMs, BigQuery, and Postgres into one synced system
+    - Wiring up automation workflows with n8n
+    - Shaping agentic dev workflows that juggle heavy context-switching and AI bottlenecks at once
+    - Digging into advanced serverless patterns
   availability: Accepting new projects now

@@ -72,14 +72,17 @@ export default defineNuxtConfig({
   routeRules: {
     // /_studio is SSR-only (GitHub OAuth + commit flow needs the server).
     // Never prerender it, never edge-cache it.
-    '/_studio/**': { prerender: false, ssr: true }
+    '/_studio/**': { prerender: false, ssr: true },
+    // Redirect old separate pages to single-page sections
+    '/about': { redirect: '/' },
+    '/projects': { redirect: '/' }
   },
 
   compatibilityDate: '2024-11-01',
 
   nitro: {
     prerender: {
-      routes: ['/', '/blog', '/about', '/projects'],
+      routes: ['/', '/blog'],
       crawlLinks: true,
       failOnError: false
     },

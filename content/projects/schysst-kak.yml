@@ -1,0 +1,11 @@
+title: Schysst-kak
+description: "Multi-app platform suite built with Claude Code multi-agent orchestration — parent repo manages 7+ submodule apps (HR/sales tools, customer hubs, pricing calculators) sharing a common skill library, ADR system, and Supabase-backed product database. Demonstrates AI-assisted dev workflow at scale: shared automation skills auto-inherited across all sub-apps, submodule pointer sync, GraphQL data layer."
+image: /projects/recent_projects_schysstkak.jpg
+url: https://schysstkak.se/
+tags:
+  - Node.js
+  - Supabase
+  - Claude Code
+  - Multi-Agent
+  - Monorepo
+date: 2026-05-01

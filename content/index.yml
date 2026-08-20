@@ -1,15 +1,15 @@
 title: Hi! I'm Sean Erick Ramones, an AI-Augmented Full-stack Engineer
-about:
-  title: About Me
-  description: |
-    As an AI-augmented full-stack software engineer with over 7 years of experience, I build modern, performant web applications and pair them with agentic workflows that compress delivery time without compromising quality.
-    I blend deep frontend craft, backend systems work, and AI tooling — Claude Code, MCP, the Claude Agent SDK, and the Anthropic API — to ship products that are scalable, accessible, and developer-friendly.
+person:
+  name: Sean Erick C. Ramones
+  title: AI Engineer | Full-Stack Development
 blog:
   title: Latest Articles
   description: Some of my recent thoughts
 aiWorkflows:
   title: AI-Augmented Workflows
-  description: How I ship faster without cutting corners — agentic tooling paired with engineering judgment, not replacing it.
+  description: Agentic tooling paired with engineering judgment, not a replacement for it. I drive the architecture and review, and AI speeds up the delivery cycle.
+  heading: How I ship faster
+  headingAccent: without cutting corners.
   items:
     - title: Agentic delivery with Claude Code & Claude Design
       description: I use Claude Design to prototype UI ideas and translate draft designs into component structure, then hand off implementation, refactors, and test scaffolding to Claude Code — driving architecture and review while AI compresses the delivery cycle.
@@ -35,7 +35,7 @@ aiWorkflows:
         - Claude Agent SDK
       icon: i-lucide-sparkles
       link: https://code.claude.com/docs/en/agent-sdk/overview
-description: I build full-stack products augmented by agentic AI — turning complex ideas into seamless experiences faster, with Claude-powered workflows guiding design, code, and delivery.
+description: 7+ years turning complex ideas into fast, seamless web apps. I pair solid frontend craft and backend systems work with AI-powered agentic workflows, so I stay on the architecture and review while the tooling handles the busywork and speeds up delivery.
 experience:
   title: Work Experience
   items:
@@ -63,115 +63,35 @@ experience:
         url: https://www.bettertradeoff.com
       description: Spearheaded AngularJS to Angular v12+ migration strategy by introducing reusable Web Components and modernizing onboarding portals, login systems, and admin dashboards to reduce technical debt.
       index: 3
-faq:
-  title: Frequently Asked Questions
-  description: Answers to common questions about how I work, collaborate, and what I’m looking for next.
+skills:
   categories:
-    - title: Work & Collaboration
-      questions:
-        - label: What kinds of projects do you focus on?
-          content: |
-            I build full‑stack web applications, dashboards, and SaaS platforms with data‑rich, user‑friendly interfaces. On the frontend I primarily use Vue/Nuxt and React/Next.js. On the backend I work with Node.js, Hono, and FastAPI, with PostgreSQL/Supabase for data, headless CMS (Strapi, Nuxt Content), Docker for containerization, and modern serverless/cloud platforms like Vercel, Cloudflare Workers, and Netlify.
-        - label: How do you ensure scalability and code quality?
-          content: |
-            I favor type‑safe code (TypeScript), clear architecture and modular components, automated testing where it matters, and performance profiling. I document decisions, use code reviews, and set up CI to keep quality high as the product grows.
-        - label: Do you work on greenfield or existing codebases?
-          content: |
-            Both. I enjoy greenfield builds and I’m experienced in migrations and modernization—e.g., leading an AngularJS → Angular upgrade using Web Components while reducing technical debt.
-    - title: Compensation & Availability
-      questions:
-        - label: How do you approach compensation discussions?
-          content: |
-            Compensation depends on the role’s scope, responsibilities, and overall package. I prefer to align on impact and expectations first, then discuss a market‑competitive offer accordingly. I’m also comfortable aligning with established salary bands and total compensation frameworks.
-        - label: Are you open to contract or freelance work?
-          content: |
-            Yes—I'm open to full‑time roles as well as contract engagements. For contracts, I prefer clearly defined scopes, deliverables, and timelines.
-        - label: What is your availability and timezone compatibility?
-          content: |
-            I primarily work in UTC+8 and can align to overlapping hours for teams in other timezones. I’m comfortable with remote and hybrid collaboration, async workflows, and scheduled syncs for key milestones.
-        - label: What roles are you looking for?
-          content: |
-            Primarily **AI-Augmented Full-stack Engineer** roles, including **Senior Full-stack** or **Frontend (Vue/Nuxt)** positions with AI/agentic scope. I'm comfortable with React and open to senior IC, hands-on tech leadership, and platform/AI-tooling-focused work.
-        - label: What’s your notice period?
-          content: |
-            Typically **1–3 weeks**, depending on active workload and handover requirements. I’ll align timelines to ensure a smooth transition.
-    - title: About Me
-      questions:
-        - label: What do you enjoy outside of work?
-          content: |
-            - **Brewing Coffee** — espresso and pour-over (and showing off my terrible latte art)
-            - **Pickleball** — current trending sport, got me hooked
-            - **Running** — sometimes jogging, sometimes walking
-            - **Free Diving** — mostly coastal areas near me
-            - **Road-trips and traveling** — sea/coastal or the mountains
-            - Cross‑fit training
-            - Watching anime
-            - Reading Japanese manga/light novels
-            - Playing MOBA games (Dota 2) and relaxing games (Stardew Valley)
-        - label: What motivates your work as an engineer?
-          content: |
-            Turning complex ideas into scalable, well‑designed products that feel effortless to use. I love shaping systems where design consistency, performance, and developer experience work together.
-        - label: What tech do you prefer working with?
-          content: |
-            Vue 3, Nuxt, React, Next.js, Node.js, Express, Hono, FastAPI, PostgreSQL/Supabase, Docker, and headless CMS (Strapi, Nuxt Content). Serverless on Vercel, Cloudflare Workers + D1, and Netlify Edge Functions. Modern tooling: Vite, GitHub, CI/CD. Day-to-day I lean on **Claude Code**, **Claude Design**, the **Claude Agent SDK**, the **Anthropic API**, and **MCP servers** — including **Figma MCP**, **Notion MCP**, and **Slack MCP** — for agentic delivery. Pragmatic — I pick the right tool for the job.
+    - name: Frontend
+      skills: [Vue.js, Nuxt, React, Angular, Vite, TypeScript, Tailwind CSS]
+    - name: Backend
+      skills: [Node.js, FastAPI, PostgreSQL, Supabase, Hono, Express]
+    - name: Cloud & DevOps
+      skills: [Vercel, Cloudflare, Docker, GitHub Actions, Netlify, AWS]
+    - name: AI & Agentic
+      skills: [Claude Code, Claude Design, Claude Agent SDK, Anthropic API, MCP, GitHub Copilot]
+    - name: Tools
+      skills: [Git, Figma, Jira, Notion, ESLint, Oxlint]
 hero:
   titlePrefix: "Hi! I'm Sean Erick. I am"
+  headline: I build full-stack products,
+  headlineAccent: augmented by agentic AI.
   roles:
     - Full-Stack AI Engineer
     - AI Product Engineer
     - AI Integrations & Workflow Engineer
     - Agentic Workflow Developer
-  links:
-    - label: Download Resume
-      to: /documents/sean-ramones-resume.pdf
-      target: _blank
-      color: neutral
-      variant: outline
-      icon: i-lucide-download
-      download: Resume - Sean Erick Ramones
-  images:
-    - src: /hero/nodejs.png
-      alt: Node.js
-    - src: /hero/vue.png
-      alt: Vue.js
-    - src: /hero/nuxt.png
-      alt: Nuxt
-    - src: /hero/react.png
-      alt: React
-    - src: /hero/angular.png
-      alt: Angular
-    - src: /hero/postgres.png
-      alt: PostgreSQL
-    - src: /hero/supabase.png
-      alt: Supabase
-    - src: /hero/vite.png
-      alt: Vite
-    - src: /hero/github.png
-      alt: GitHub
-    - src: /hero/vercel.png
-      alt: Vercel
-    - src: /hero/cloudflare.png
-      alt: Cloudflare
-    - src: /hero/git.png
-      alt: Git
-    - src: /hero/jira.png
-      alt: Jira
-    - src: /hero/github-copilot.png
-      alt: GitHub Copilot
-    - src: /hero/claude-code.png
-      alt: Claude Code
-    - src: /hero/mcp.png
-      alt: Model Context Protocol
-    - src: /hero/claude-agent-sdk.png
-      alt: Claude Agent SDK
-    - src: /hero/claude-design.png
-      alt: Claude Design
-    - src: /hero/anthropic.png
-      alt: Anthropic
-    - src: /hero/figma.png
-      alt: Figma
-    - src: /hero/notion.png
-      alt: Notion
+  resumeLink:
+    label: Download Resume
+    to: /documents/sean-ramones-resume.pdf
+    target: _blank
+    color: neutral
+    variant: outline
+    icon: i-lucide-download
+    download: Resume - Sean Erick Ramones
 now:
   openTo:
     - Full-time
@@ -179,9 +99,37 @@ now:
     - Remote (UTC+8 overlap)
   available: true
   meetingLink: https://cal.com/sean-erick-ramones-r5um2y/15min
-profileImage:
-  src: /avatars/profile-image-1.png
-  alt: Profile image of Sean Erick Ramones
+about:
+  heading: I like building products that feel effortless, and systems that stay clean as they grow.
+  checklist:
+    - Type-safe code & clean architecture
+    - Reusable components & design systems
+    - Performance, accessibility & DX
+    - CI/CD & review culture that scales
+  quickFacts:
+    - label: Experience
+      value: 7+ years
+    - label: Based in
+      value: Dumaguete · UTC+8
+    - label: Education
+      value: BSIT · Silliman Univ.
+    - label: Languages
+      value: English · Filipino · Cebuano
+beyond:
+  items:
+    - Brewing coffee
+    - Pickleball
+    - Running
+    - Free diving
+    - Road-trips & travel
+    - Cross-fit
+    - Anime & manga
+    - Dota 2 · Stardew Valley
+projects:
+  heading: HR-tech platforms, financial tools, and data-rich products.
+contact:
+  heading: Let's build something that ships.
+  ctaLabel: Book a 15-min call
 seo:
   title: Sean Erick C. Ramones | AI-Augmented Full-stack Engineer
   description: Sean Erick Ramones — AI-Augmented Full-stack Engineer. I build modern web apps with Vue/Nuxt, Node.js, FastAPI, and ship faster with Claude Code, MCP, and agentic workflows.
