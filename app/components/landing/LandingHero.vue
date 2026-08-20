@@ -34,13 +34,19 @@ onUnmounted(() => clearInterval(timer))
 <template>
   <section class="py-[92px]">
     <div class="mx-auto max-w-[1120px] px-[28px]">
-      <div class="flex items-center gap-2.5 mb-5">
+      <div class="flex flex-col items-start gap-2.5 mb-5 md:flex-row md:items-center">
+        <span
+          class="text-xs uppercase tracking-[.14em] text-matcha-700 dark:text-matcha-400"
+          style="font-family: var(--font-mono)"
+        >
+          Sean Erick C. Ramones
+        </span>
         <span class="block shrink-0 w-[22px] h-px bg-matcha-600 dark:bg-matcha-400" />
         <span
           class="text-xs uppercase tracking-[.14em] text-matcha-700 dark:text-matcha-400"
           style="font-family: var(--font-mono)"
         >
-          Sean Erick Ramones -- AI Engineer | Full-Stack Development
+          AI Engineer | Full-Stack Development
         </span>
       </div>
 
