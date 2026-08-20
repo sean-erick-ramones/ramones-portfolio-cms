@@ -12,10 +12,10 @@ if (!page.value) {
 const { global } = useAppConfig()
 
 const siteUrl = 'https://www.seancramones.com'
-const title = page.value.seo?.title || page.value.title || 'Sean Erick C. Ramones'
+const title = page.value?.seo?.title || page.value?.title || 'Sean Erick C. Ramones'
 const description =
-  page.value.seo?.description ||
-  page.value.description ||
+  page.value?.seo?.description ||
+  page.value?.description ||
   'AI-Augmented Full-stack Engineer building modern web apps with Vue/Nuxt, Node.js, FastAPI, Claude Code, MCP, and agentic workflows.'
 
 useSeoMeta({
